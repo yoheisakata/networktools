@@ -1,7 +1,7 @@
 import socket
 import sys
 
-host = 'localhost'
+host = '192.168.0.22'
 port = 8080
 server_address = (host, port)
 

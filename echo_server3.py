@@ -4,7 +4,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
-host = 'localhost'
+host = '192.168.0.22'
 port = 8080
 bind_address = (host, port)
 

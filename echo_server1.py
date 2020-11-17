@@ -2,15 +2,20 @@
 import socket 
 
 HOST = ''
-PORT = 50007 
+PORT = 12345
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
+    print(f'{HOST} and {PORT} are used')
     s.listen(1)
+    print(f'Started listening.')
     conn, addr = s.accept()
+    print ('Connected by', addr)
     with conn:
-        print ('Connected by', addr)
         while True:
-            data = conn.recv(1024)
-            if not data: break
+            data = conn.recv(4)
+            print (f'Received {data}')
+            if not data:
+                break
+            print (f'Sent {data}')
             conn.sendall(data)
 
